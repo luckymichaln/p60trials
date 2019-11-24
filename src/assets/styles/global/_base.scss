@@ -1,0 +1,43 @@
+html *, body * {
+  box-sizing: border-box;
+}
+
+
+.no-selection {
+  user-select: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.text--semibold {
+  font-family: 500;
+}
+
+.text--bold {
+  font-family: 700;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  &--wide {
+    max-width: 1280px;
+    padding: 0 20px;
+  }
+}
+
+
+/**
+ * Firefox specific rule
+ */
+
+@-moz-document url-prefix() {
+  body {
+    font-weight: lighter !important;
+  }
+}
