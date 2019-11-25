@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import store from './store'
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
 import htmlSerializer from './prismic/html-serializer'
@@ -16,5 +17,6 @@ Vue.use(PrismicVue, {
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

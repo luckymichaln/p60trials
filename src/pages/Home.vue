@@ -1,33 +1,29 @@
 <template>
   <div>
-    <Hero
-      :image="image"
-      :titleLogo="logo"
-      :backgroundLogo="backgroundLogo"
-      :subheading="subheading"
-      :athletesList="athletesList"
+    <HomeHero
+      v-if="isContentLoaded"
+      :heroData="homeHeroData"
     />
+    <div class="loader" v-if="!isContentLoaded"/>
   </div>
 </template>
 
 <script>
-import Hero from '@/components/Hero';
+import { mapGetters, mapState } from 'vuex';
+import HomeHero from '@/components/HomeHero';
 
 export default {
   name: 'home',
 
-  data () {
-    return {
-      image: null,
-      logo: null,
-      subheading: null,
-      backgroundLogo: null,
-      athletesList: null
-    }
+  computed: {
+    ...mapGetters(['homeHeroData']),
+    ...mapState(['isContentLoaded'])
   },
 
-  created() {
-    this.getContent()
+  created () {
+    if (!this.data) {
+      this.$store.dispatch('GET_HP_DATA')
+    }
   },
 
   methods: {
@@ -35,18 +31,20 @@ export default {
       await this.$prismic.client.getSingle('home_page').then((document) => {
         if (document.data) {
           const { background_logo, hero_logo, hero_subheading, home_hero_image, athletes_cards } = document.data
+          // console.log(document.data)
           this.image = home_hero_image
           this.logo = hero_logo
           this.subheading = hero_subheading[0].text
           this.backgroundLogo = background_logo
           this.athletesList = athletes_cards
+          // console.log(this.logo, this.image)
         }
       });
     }
   },
 
   components: {
-    Hero
+    HomeHero
   }
 }
 </script>

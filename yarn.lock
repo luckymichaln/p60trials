@@ -2285,7 +2285,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-fetch@^2.2.0:
+cross-fetch@^2.2.0, cross-fetch@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.3.tgz#e8a0b3c54598136e037f8650f8e823ccdfac198e"
   integrity sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
@@ -6126,6 +6126,14 @@ prismic-javascript@^1.5.0:
     cross-fetch "^2.2.0"
     promise-polyfill "8.0.0"
 
+prismic-javascript@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/prismic-javascript/-/prismic-javascript-2.1.1.tgz#fd82bd3a8882acc69c7b52c257340516dadec0d2"
+  integrity sha512-37j0Ypqwk/cM/x5VB1pdMS0I9umHIfQbB7TxiXeVjQjqz6zuZSdToYy67VB7lEDUWLZE4U4k1H2zTSH1QUFi+g==
+  dependencies:
+    cross-fetch "^2.2.3"
+    promise-polyfill "8.0.0"
+
 prismic-richtext@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/prismic-richtext/-/prismic-richtext-0.4.2.tgz#bdc27d2c3d0e8e2226918b7ad2708fd3ac3d1e7f"
@@ -7845,6 +7853,11 @@ vue@^2.5.16:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
+
+vuex@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.2.tgz#a2863f4005aa73f2587e55c3fadf3f01f69c7d4d"
+  integrity sha512-ha3jNLJqNhhrAemDXcmMJMKf1Zu4sybMPr9KxJIuOpVcsDQlTBYLLladav2U+g1AvdYDG5Gs0xBTb0M5pXXYFQ==
 
 watchpack@^1.6.0:
   version "1.6.0"

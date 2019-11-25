@@ -1,0 +1,1 @@
+export const endpoint = 'https://project-60.prismic.io/api/v2';

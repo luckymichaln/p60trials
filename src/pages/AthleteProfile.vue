@@ -1,6 +1,6 @@
 <template>
   <div>
-    Athlete profile
+    {{ $prismic.richTextAsPlain(hero.name) }}
   </div>
 </template>
 
@@ -29,8 +29,9 @@ export default {
     }
   },
 
-  async created () {
-    await this.getContent(this.$route.params.uid)
+  created () {
+    console.log(this.$route.params.uid)
+    this.$store.dispatch('GET_ATHLETE_DATA', { uid: this.$route.params.uid })
   },
 
   methods: {
@@ -42,7 +43,7 @@ export default {
 
     getContent (uid) {
       return this.$prismic.client.getByUID('athlete_page', uid).then((document) => {
-        if (document.data) {
+        if (document) {
           const { achievements, birthday, age, coach, full_name, hero_achievements, hero_image, hero_social_media, hometown, motto, quote, slider } = document.data
 
           this.hero.image = hero_image
