@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from '../router'
 import Prismic from 'prismic-javascript'
 import { endpoint } from './config'
 
@@ -13,7 +14,7 @@ const state = {
 
 const actions = {
   async GET_HP_DATA({ state, commit }) {
-    commit('SET_CONTENT_LOADED', { data: false })
+    commit('SET_CONTENT_LOADED', { loaded: false })
     try {
       const api = await Prismic.getApi(endpoint)
       const { data } = await api.getSingle('home_page')
@@ -24,7 +25,7 @@ const actions = {
 
       console.log({ GET_HP_DATA: data })
 
-      commit('SET_CONTENT_LOADED', { data: true })
+      commit('SET_CONTENT_LOADED', { loaded: true })
       return data
     } catch (err) {
       console.error(err)
@@ -32,7 +33,7 @@ const actions = {
   },
 
   async GET_ATHLETE_DATA({ state, commit }, { uid }) {
-    commit('SET_CONTENT_LOADED', { data: false })
+    commit('SET_CONTENT_LOADED', { loaded: false })
     try {
       const api = await Prismic.getApi(endpoint)
       const { data } = await api.getByUID('athlete_page', uid)
@@ -43,9 +44,10 @@ const actions = {
 
       console.log({ GET_ATHLETE_DATA: data })
 
-      commit('SET_CONTENT_LOADED', { data: true })
+      commit('SET_CONTENT_LOADED', { loaded: true })
       return data
     } catch (err) {
+      router.push('/not-found')
       console.error(err)
     }
   }
@@ -60,22 +62,68 @@ const mutations = {
     state.singleAthlete = data
   },
 
-  SET_CONTENT_LOADED(state, { data }) {
-    state.isContentLoaded = data
+  SET_CONTENT_LOADED(state, { loaded }) {
+    state.isContentLoaded = loaded
   }
 }
 
 const getters = {
   homeHeroData: state => {
-    if (state.homePageData) {
-      const { background_logo: bgcLogo, hero_logo: heroLogo, hero_subheading: heroSubheading, home_hero_image: heroImage } = state.homePageData
+    if (!state.homePageData) {
+      return null
+    }
 
-      return {
-        bgcLogo,
-        heroLogo,
-        heroSubheading,
-        heroImage
-      }
+    const { background_logo: bgcLogo, hero_logo: heroLogo, hero_subheading: heroSubheading, home_hero_image: heroImage } = state.homePageData
+
+    return {
+      bgcLogo,
+      heroLogo,
+      heroSubheading,
+      heroImage
+    }
+  },
+
+  homeCards: state => {
+    if (!state.homePageData) {
+      return null
+    }
+
+    const { athletes_cards: athleteCards } = state.homePageData
+
+    return athleteCards
+  },
+
+  athleteData: state => {
+    if (!state.singleAthlete) {
+      return null
+    }
+
+    const { achievements, age, birthday, coach, full_name: fullName, hero_achievements: heroAchievements, hero_image: heroImage, hero_social_media: heroSocialMedia, hometown, motto, quote, slider } = state.singleAthlete
+
+    const groupSlider = slider
+      .map(slide => slide.slider_image.url ? slide.slider_image : slide.slider_link.url ? slide.slider_link.url : null)
+      .filter(el => el !== null)
+
+    const socialMedia = heroSocialMedia
+      .map(link => link.social_link.url ? link.social_link : null)
+      .filter(el => el !== null)
+
+    return {
+      hero: {
+        heroAchievements,
+        heroImage,
+        socialMedia,
+        age
+      },
+      full: {
+        achievements,
+        birthday,
+        hometown,
+        motto,
+        quote,
+        coach
+      },
+      groupSlider
     }
   }
 }

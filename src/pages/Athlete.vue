@@ -1,37 +1,33 @@
 <template>
   <div>
-    {{ $prismic.richTextAsPlain(hero.name) }}
+    <transition name="fade" mode="out-in">
+      <div v-if="isContentLoaded">
+        {{  }}
+      </div>
+      <div class="loader" v-if="!isContentLoaded"/>
+    </transition>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex'
+
 export default {
   name: 'athlete-profile',
-  data () {
-    return {
-      hero: {
-        image: null,
-        name: null,
-        age: null,
-        achievements: null,
-        socialMedia: null
-      },
-      bio: {
-        birthday: null,
-        coach: null,
-        hometown: null,
-        motto: null,
-        quote: null
-      },
-      media: {
-        slider: null
-      }
-    }
+
+  computed: {
+    ...mapState(['isContentLoaded']),
+    ...mapGetters(['athleteData'])
   },
 
   created () {
-    console.log(this.$route.params.uid)
     this.$store.dispatch('GET_ATHLETE_DATA', { uid: this.$route.params.uid })
+  },
+
+  mounted() {
+    setTimeout(() => {
+      console.log(this.athleteData)
+    }, 1000)
   },
 
   methods: {
