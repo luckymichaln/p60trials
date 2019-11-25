@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <transition name="fade" mode="out-in">
       <div v-if="isContentLoaded">
         <AthleteProfile :data="athleteData"/>

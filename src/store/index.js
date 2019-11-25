@@ -100,7 +100,7 @@ const getters = {
 
     const { achievements, age, birthday, coach, full_name: fullName, hero_achievements: heroAchievements, hero_image: heroImage, hero_social_media: heroSocialMedia, hometown, motto, quote, slider } = state.singleAthlete
 
-    const groupSlider = slider
+    const media = slider
       .map(slide => slide.slider_image.url ? slide.slider_image : slide.slider_link.url ? slide.slider_link.url : null)
       .filter(el => el !== null)
 
@@ -116,7 +116,7 @@ const getters = {
         heroImage,
         socialMedia
       },
-      full: {
+      bio: {
         birthday,
         hometown,
         coach,
@@ -124,7 +124,7 @@ const getters = {
         motto,
         quote
       },
-      groupSlider
+      media
     }
   }
 }

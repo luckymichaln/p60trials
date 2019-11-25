@@ -9,12 +9,12 @@ export default function (doc) {
     return '/not-found'
   }
 
-  if (doc.type === 'home') {
+  if (doc.type === 'home_page') {
     return '/'
   }
 
-  if (doc.type === 'page') {
-    return '/' + doc.uid
+  if (doc.type === 'athlete_page') {
+    return '/athletes/' + doc.uid
   }
 
   return '/not-found'
