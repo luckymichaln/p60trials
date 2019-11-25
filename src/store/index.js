@@ -110,18 +110,19 @@ const getters = {
 
     return {
       hero: {
+        fullName,
+        age,
         heroAchievements,
         heroImage,
-        socialMedia,
-        age
+        socialMedia
       },
       full: {
-        achievements,
         birthday,
         hometown,
+        coach,
+        achievements,
         motto,
-        quote,
-        coach
+        quote
       },
       groupSlider
     }
