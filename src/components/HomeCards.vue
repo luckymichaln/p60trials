@@ -1,11 +1,13 @@
 <template>
-  <section class="home-cards">
-    <AthleteCard
-      v-for="(card, key) in cards"
-      :key="key"
-      :card="card"
-    />
-  </section>
+  <div class="container">
+    <section class="home-cards">
+      <AthleteCard
+        v-for="(card, key) in cards"
+        :key="key"
+        :card="card"
+      />
+    </section>
+  </div>
 </template>
 
 <script>
@@ -26,5 +28,11 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .home-cards {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 130px;
+  }
 </style>

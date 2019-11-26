@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <transition name="fade" mode="out-in">
+    <transition name="fade" mode="in-out">
       <div v-if="isContentLoaded">
         <AthleteProfile :data="athleteData"/>
       </div>
-      <div class="loader" v-if="!isContentLoaded"/>
+      <div class="loader" v-else>loading...</div>
     </transition>
   </div>
 </template>

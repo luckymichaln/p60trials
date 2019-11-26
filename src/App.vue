@@ -3,7 +3,7 @@
     <transition name="fade" mode="out-in">
       <router-view/>
     </transition>
-    <footer>2019 all rights reserved</footer>
+    <footer class="app-footer">2019 all rights reserved</footer>
   </div>
 </template>
 
