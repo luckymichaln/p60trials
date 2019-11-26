@@ -1,0 +1,13 @@
+.btn {
+  padding: 5px 38px 7px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+
+  &-primary {
+    color: #fff;
+    background-color: #39505c;
+  }
+}

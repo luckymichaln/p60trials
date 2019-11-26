@@ -33,6 +33,6 @@ export default {
     z-index: 10;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 130px;
+    margin: 130px -20px 0;
   }
 </style>
