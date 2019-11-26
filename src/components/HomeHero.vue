@@ -21,7 +21,14 @@
         alt="Project Sixty logo"
       />
     </div>
-    <p class="home-hero-subheading">{{ $prismic.richTextAsPlain(heroData.heroSubheading) }}</p>
+    <p
+      class="home-hero-subheading"
+      v-rellax="{speed: 2}"
+    >
+      <span>
+        {{ $prismic.richTextAsPlain(heroData.heroSubheading) }}
+      </span>
+    </p>
   </section>
 </template>
 
@@ -57,11 +64,15 @@
     &-subheading {
       position: absolute;
       top: 45%;
-      left: -40px;
-      transform: rotate(-90deg) translate(0, -50%);
+      left: -70px;
       font-size: 72px;
       font-weight: 700;
       color: #484848;
+
+      span {
+        display: block;
+        transform: rotate(-90deg);
+      }
     }
 
     .home-image-logo {

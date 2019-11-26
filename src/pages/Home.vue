@@ -11,7 +11,12 @@
         >
           Meet the team
         </button>
-        <span class="home-page-accent-span">Trials</span>
+        <span
+          class="home-page-accent-span"
+          v-rellax="{speed: -1}"
+        >
+          Trials
+        </span>
         <HomeCards
           :cards="homeCards"
         />
@@ -66,10 +71,9 @@ export default {
   .home-page {
     &-accent-span {
       position: absolute;
-      bottom: -140px;
-      left: 50%;
+      bottom: -90px;
+      left: calc(50% - (1082px / 2));
       z-index: -1;
-      transform: translateX(-50%);
       text-transform: uppercase;
       font-size: 300px;
       font-weight: 900;

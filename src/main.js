@@ -3,6 +3,7 @@ import store from './store'
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
 import htmlSerializer from './prismic/html-serializer'
+import VueRellax from 'vue-rellax'
 import App from './App.vue'
 import router from './router'
 import '@/assets/styles/main.scss'
@@ -13,6 +14,12 @@ Vue.use(PrismicVue, {
   endpoint: window.prismic.endpoint,
   linkResolver,
   htmlSerializer
+})
+
+Vue.use(VueRellax)
+
+const vm = new Vue({
+  el: '#app'
 })
 
 new Vue({
