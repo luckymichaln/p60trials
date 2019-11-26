@@ -75,7 +75,10 @@ export default {
     &-accent-span {
       position: absolute;
       bottom: -90px;
-      left: calc(50% - (1082px / 2));
+      left: 0;
+      width: 100vw;
+      text-align: center;
+      /* left: calc(50% - (1082px / 2)); */
       z-index: -1;
       text-transform: uppercase;
       font-size: 300px;
