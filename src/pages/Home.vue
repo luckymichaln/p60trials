@@ -1,29 +1,13 @@
 <template>
   <div class="home-page">
     <transition name="fade" mode="out-in">
-      <div v-if="isContentLoaded">
-        <HomeHero
-          :heroData="homeHeroData"
-        />
-        <button
-          class="home-page-scroll-btn no-selection"
-          @click="scrollTo()"
-        >
-          Meet the team
-        </button>
-        <span
-          class="home-page-accent-span no-selection"
-          v-rellax="{speed: -1}"
-        >
-          Trials
-        </span>
-        <HomeCards
-          :cards="homeCards"
-        />
-        <AppStripes />
-      </div>
+      <HomeContent
+        v-if="isContentLoaded"
+        :hero="homeHeroData"
+        :cards="homeCards"
+      />
       <div
-        v-else
+        v-if="!isContentLoaded"
         class="loader"
       >
         loading...
@@ -34,9 +18,7 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex';
-import HomeHero from '@/components/HomeHero';
-import HomeCards from '@/components/HomeCards';
-import AppStripes from '@/components/AppStripes';
+import HomeContent from '@/components/HomeContent';
 
 export default {
   name: 'home',
@@ -63,9 +45,7 @@ export default {
   },
 
   components: {
-    HomeHero,
-    HomeCards,
-    AppStripes
+    HomeContent
   }
 }
 </script>
@@ -78,7 +58,6 @@ export default {
       left: 0;
       width: 100vw;
       text-align: center;
-      /* left: calc(50% - (1082px / 2)); */
       z-index: -1;
       text-transform: uppercase;
       font-size: 300px;
