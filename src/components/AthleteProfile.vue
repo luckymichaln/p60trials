@@ -37,8 +37,7 @@
     </section>
     <section class="athlete-profile__logos">
       <img
-        src="../assets/images/logo-profile.png"
-        srcset="../assets/images/logo-profile.png 1x, ../assets/images/logo-profile.png 2x"
+        src="../assets/images/logo-vertical.svg"
         alt="Project Sixty logotype"
       />
     </section>

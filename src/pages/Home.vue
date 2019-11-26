@@ -6,13 +6,13 @@
           :heroData="homeHeroData"
         />
         <button
-          class="home-page-scroll-btn"
+          class="home-page-scroll-btn no-selection"
           @click="scrollTo()"
         >
           Meet the team
         </button>
         <span
-          class="home-page-accent-span"
+          class="home-page-accent-span no-selection"
           v-rellax="{speed: -1}"
         >
           Trials
@@ -20,6 +20,7 @@
         <HomeCards
           :cards="homeCards"
         />
+        <AppStripes />
       </div>
       <div
         v-else
@@ -35,6 +36,7 @@
 import { mapGetters, mapState } from 'vuex';
 import HomeHero from '@/components/HomeHero';
 import HomeCards from '@/components/HomeCards';
+import AppStripes from '@/components/AppStripes';
 
 export default {
   name: 'home',
@@ -62,7 +64,8 @@ export default {
 
   components: {
     HomeHero,
-    HomeCards
+    HomeCards,
+    AppStripes
   }
 }
 </script>

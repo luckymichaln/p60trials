@@ -25,7 +25,7 @@
       class="home-hero-subheading"
       v-rellax="{speed: 2}"
     >
-      <span>
+      <span class="no-selection">
         {{ $prismic.richTextAsPlain(heroData.heroSubheading) }}
       </span>
     </p>
@@ -58,7 +58,6 @@
       left: -20px;
       width: 27%;
       max-width: 320px;
-      opacity: .06;
     }
 
     &-subheading {
