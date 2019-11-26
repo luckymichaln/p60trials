@@ -98,7 +98,7 @@ const getters = {
       return null
     }
 
-    const { achievements, age, birthday, coach, full_name: fullName, hero_achievements: heroAchievements, hero_image: heroImage, hero_social_media: heroSocialMedia, hometown, motto, quote, slider } = state.singleAthlete
+    const { achievements, year, birthday, coach, athlete_name: athleteName, hero_achievements: heroAchievements, hero_image: heroImage, hero_social_media: heroSocialMedia, hometown, motto, quote, slider } = state.singleAthlete
 
     const media = slider
       .map(slide => slide.slider_image.url ? slide.slider_image : slide.slider_link.url ? slide.slider_link.url : null)
@@ -110,8 +110,8 @@ const getters = {
 
     return {
       hero: {
-        fullName,
-        age,
+        athleteName,
+        year,
         heroAchievements,
         heroImage,
         socialMedia

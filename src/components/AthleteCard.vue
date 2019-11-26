@@ -70,7 +70,7 @@ export default {
       p {
         display: inline-block;
         background-color: #fff;
-        padding: 2px 12px 6px 5px;
+        padding: 3px 12px 2px 5px;
       }
 
       strong {
