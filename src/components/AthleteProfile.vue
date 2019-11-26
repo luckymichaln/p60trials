@@ -123,6 +123,15 @@
 
     &__bio {
       padding-top: 50px;
+      margin-bottom: 80px;
+    }
+
+    &__media {
+      margin-bottom: 200px;
+
+      .media-heading {
+        margin-bottom: 50px;
+      }
     }
 
     .hero-photo {
@@ -259,6 +268,12 @@
       font-size: 16px;
       font-weight: 300;
       line-height: 1.5;
+
+      a {
+        text-decoration: underline;
+        font-weight: 700;
+        color: #39505c;
+      }
 
       li:not(.list) {
         display: flex;
