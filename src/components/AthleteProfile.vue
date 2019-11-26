@@ -83,7 +83,7 @@
     </section>
     <section class="athlete-profile__media">
       <h3 class="media-heading heading-accent">Media</h3>
-      {{ data.media }}
+      <!-- {{ data.media }} -->
     </section>
   </div>
 </template>
