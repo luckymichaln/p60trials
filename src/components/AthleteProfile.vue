@@ -100,6 +100,21 @@
     &__hero {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 70px;
+    }
+
+    &__logos {
+      padding: 50px 0;
+      border-top: 1px solid #cbcbcb;
+      border-bottom: 1px solid #cbcbcb;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        max-width: 200px;
+        opacity: .9;
+      }
     }
 
     .hero-photo {
@@ -137,6 +152,31 @@
       width: 100%;
       max-width: 380px;
       z-index: 10;
+
+      .btn {
+        position: relative;
+        padding-left: 60px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 11px;
+          left: 28px;
+          border-top: 5px solid transparent;
+          border-right: 5px solid #fff;
+          border-bottom: 5px solid transparent;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 15px;
+          left: 33px;
+          height: 2px;
+          width: 10px;
+          background-color: #fff;
+        }
+      }
 
       &-name {
         position: absolute;

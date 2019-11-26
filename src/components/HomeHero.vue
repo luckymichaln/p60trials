@@ -63,7 +63,7 @@
     &-subheading {
       position: absolute;
       top: 45%;
-      left: -70px;
+      left: -66px;
       font-size: 72px;
       font-weight: 700;
       color: #484848;

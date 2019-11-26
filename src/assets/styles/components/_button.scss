@@ -5,9 +5,14 @@
   font-weight: 700;
   text-transform: lowercase;
   cursor: pointer;
+  transition: .15s;
 
   &-primary {
     color: #fff;
     background-color: #39505c;
+
+    &:hover {
+      background-color: darken(#39505c, 5);
+    }
   }
 }

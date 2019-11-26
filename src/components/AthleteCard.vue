@@ -40,6 +40,10 @@ export default {
     &:hover {
       transform: scale(1.02);
       box-shadow: 0px 11px 18px 9px rgba(0, 0, 0, 0.06);
+
+      .btn {
+        background-color: darken(#39505c, 5);
+      }
     }
 
     .btn {
