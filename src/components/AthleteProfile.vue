@@ -67,6 +67,10 @@
                 {{ $prismic.richTextAsPlain(data.bio.coach) }}
               </span>
             </li>
+            <li class="list">
+              <strong>Achievements:</strong>
+              <prismic-rich-text :field="data.bio.achievements"/>
+            </li>
             <li>
               <strong>Motto:</strong> <prismic-rich-text :field="data.bio.motto"/>
             </li>
@@ -115,6 +119,10 @@
         max-width: 200px;
         opacity: .9;
       }
+    }
+
+    &__bio {
+      padding-top: 50px;
     }
 
     .hero-photo {
@@ -236,6 +244,66 @@
               left: -10px;
             }
           }
+        }
+      }
+    }
+
+    .bio-info strong {
+      margin-right: 5px;
+      font-size: 18px;
+    }
+
+    .bio__content {
+      display: flex;
+      margin-top: 50px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+
+      li:not(.list) {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      .list ul {
+        margin: 5px 0 0 30px;
+
+        li::before {
+          content: '-';
+          margin-right: 5px;
+        }
+      }
+
+      .bio-quote {
+        position: relative;
+        width: 100%;
+        max-width: 520px;
+        margin: 0 50px 0 auto;
+
+        &::before,
+        &::after {
+          position: absolute;
+          font-family: 'Arial';
+          font-size: 160px;
+          opacity: .2;
+        }
+
+        &::before {
+          content: '"';
+          top: -100px;
+          right: -46px;
+          transform: rotate(15deg);
+        }
+
+        &::after {
+          content: '"';
+          left: -75px;
+          bottom: 20px;
+          transform: rotate(-165deg);
         }
       }
     }

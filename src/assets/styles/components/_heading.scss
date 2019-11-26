@@ -1,0 +1,18 @@
+.heading-accent {
+  position: relative;
+  display: inline-block;
+  padding: 11px 20px 8px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #000;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -64px;
+    top: 0;
+    border-bottom: 67px solid transparent;
+    border-left: 64px solid #000;
+  }
+}

@@ -9,6 +9,14 @@ html *, body * {
   overflow-y: auto;
   font-weight: 400;
   color: #0e0e0e;
+
+  strong {
+    font-weight: 500;
+  }
+
+  em {
+    font-style: italic;
+  }
 }
 
 .no-selection {
