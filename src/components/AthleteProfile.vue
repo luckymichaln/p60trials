@@ -13,16 +13,10 @@
             class="content-list"
             :field="data.hero.heroAchievements"
           />
-          <ul class="content-list--social">
-            <li
-              v-for="(link, key) in data.hero.socialMedia"
-              :key="key"
-            >
-              <prismic-link
-                :field="link"
-              />
-            </li>
-          </ul>
+          <AthleteHeroSocialMedia
+            v-if="data.hero.socialMedia.length"
+            :list="data.hero.socialMedia"
+          />
         </div>
         <router-link
           :to="{name: 'home'}"
@@ -92,12 +86,22 @@
 </template>
 
 <script>
+  import AthleteHeroSocialMedia from './AthleteHeroSocialMedia';
+
   export default {
     props: {
       data: {
         type: Object,
         default: () => {}
       }
+    },
+
+    created () {
+      console.log(this.data)
+    },
+
+    components: {
+      AthleteHeroSocialMedia
     }
   }
 </script>

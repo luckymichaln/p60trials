@@ -3,10 +3,24 @@ import store from './store'
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
 import htmlSerializer from './prismic/html-serializer'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGlobeAfrica } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faYoutube, faInstagram, faVimeoV } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueRellax from 'vue-rellax'
 import App from './App.vue'
 import router from './router'
 import '@/assets/styles/main.scss'
+
+library.add(
+  faGlobeAfrica,
+  faFacebookF,
+  faInstagram,
+  faYoutube,
+  faVimeoV
+)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 

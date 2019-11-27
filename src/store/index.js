@@ -107,6 +107,16 @@ const getters = {
     const socialMedia = heroSocialMedia
       .map(link => link.social_link.url ? link.social_link : null)
       .filter(el => el !== null)
+      .map(el => {
+        if (el && el.url) {
+          const type = el.url.split('www.')[1].split('.com')[0]
+
+          return {
+            url: el.url,
+            type
+          }
+        }
+      })
 
     return {
       hero: {
