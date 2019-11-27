@@ -238,14 +238,14 @@
           }
 
           &-heading {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 500;
           }
 
           &-list {
-            margin: 15px 0 0 30px;
+            margin: 25px 0 0 30px;
             font-weight: 300;
-            line-height: 1.3;
+            line-height: 1.6;
 
             li::before {
               content: '-';
@@ -295,6 +295,7 @@
 
       .bio-quote {
         position: relative;
+        align-self: flex-start;
         width: 100%;
         max-width: 520px;
         margin: 0 50px 0 auto;
@@ -304,12 +305,13 @@
           position: absolute;
           font-family: 'Arial';
           font-size: 160px;
+          line-height: .8;
           opacity: .2;
         }
 
         &::before {
           content: '"';
-          top: -100px;
+          top: -30px;
           right: -46px;
           transform: rotate(15deg);
         }
@@ -317,7 +319,7 @@
         &::after {
           content: '"';
           left: -75px;
-          bottom: 20px;
+          bottom: -20px;
           transform: rotate(-165deg);
         }
       }
