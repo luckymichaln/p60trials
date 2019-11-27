@@ -71,7 +71,7 @@
               <strong>Achievements:</strong>
               <prismic-rich-text :field="data.bio.achievements"/>
             </li>
-            <li>
+            <li v-if="data.bio.motto.length">
               <strong>Motto:</strong> <prismic-rich-text :field="data.bio.motto"/>
             </li>
           </ul>
