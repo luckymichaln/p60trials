@@ -81,9 +81,12 @@
         </div>
       </div>
     </section>
-    <section class="athlete-profile__media">
+    <section
+      v-if="data.media.length"
+      class="athlete-profile__media"
+    >
       <h3 class="media-heading heading-accent">Media</h3>
-      <!-- {{ data.media }} -->
+      {{ data.media }}
     </section>
   </div>
 </template>
@@ -290,7 +293,7 @@
       }
 
       .list ul {
-        margin: 5px 0 0 30px;
+        margin: 5px 0 0 20px;
 
         li::before {
           content: '-';
