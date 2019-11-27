@@ -257,9 +257,14 @@
       }
     }
 
-    .bio-info strong {
-      margin-right: 5px;
-      font-size: 18px;
+    .bio-info {
+      width: 100%;
+      max-width: 420px;
+
+      strong {
+        margin-right: 5px;
+        font-size: 18px;
+      }
     }
 
     .bio__content {
@@ -319,7 +324,7 @@
         &::after {
           content: '"';
           left: -75px;
-          bottom: -20px;
+          bottom: -30px;
           transform: rotate(-165deg);
         }
       }
