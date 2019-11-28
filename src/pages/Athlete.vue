@@ -32,6 +32,11 @@ export default {
     }, 1000)
   },
 
+  beforeRouteUpdate (to, from, next) {
+    this.$store.dispatch('GET_ATHLETE_DATA', { uid: to.params.uid });
+    next();
+  },
+
   components: {
     AthleteProfile
   }
