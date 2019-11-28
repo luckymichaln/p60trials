@@ -20,7 +20,9 @@
     "prismic-vue": "^1.3.0",
     "sass-loader": "^8.0.0",
     "vue": "^2.5.16",
+    "vue-awesome-swiper": "^3.1.3",
     "vue-highlightjs": "^1.3.3",
+    "vue-plyr": "^6.0.4",
     "vue-rellax": "^0.1.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.2"

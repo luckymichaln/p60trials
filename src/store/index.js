@@ -101,8 +101,15 @@ const getters = {
     const { achievements, year, birthday, coach, athlete_name: athleteName, hero_achievements: heroAchievements, hero_image: heroImage, hero_social_media: heroSocialMedia, hometown, motto, quote, slider } = state.singleAthlete
 
     const media = slider
-      .map(slide => slide.slider_image.url ? slide.slider_image : slide.slider_link.url ? slide.slider_link.url : null)
-      .filter(el => el !== null)
+      .map(slide => {
+        return {
+          type: slide.slider_image.url ? 'photo' : slide.slider_link.url.split('www.')[1].split('.com')[0],
+          media: {
+            url: slide.slider_image.url || slide.slider_link.url,
+            alt: slide.slider_image.alt || null
+          }
+        }
+      }).filter(el => el !== null)
 
     const socialMedia = heroSocialMedia
       .map(link => link.social_link.url ? link.social_link : null)

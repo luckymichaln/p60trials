@@ -3,6 +3,8 @@ import store from './store'
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
 import htmlSerializer from './prismic/html-serializer'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VuePlyr from 'vue-plyr';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGlobeAfrica } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faYoutube, faInstagram, faVimeoV } from '@fortawesome/free-brands-svg-icons'
@@ -19,6 +21,9 @@ library.add(
   faYoutube,
   faVimeoV
 )
+
+Vue.use(VueAwesomeSwiper)
+Vue.use(VuePlyr)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

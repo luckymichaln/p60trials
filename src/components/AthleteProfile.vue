@@ -80,13 +80,17 @@
       class="athlete-profile__media"
     >
       <h3 class="media-heading heading-accent">Media</h3>
-      {{ data.media }}
+      <Swiper
+        :options="swiperOptions"
+        :slides="data.media"
+      />
     </section>
   </div>
 </template>
 
 <script>
   import AthleteHeroSocialMedia from './AthleteHeroSocialMedia';
+  import Swiper from './vendors/Swiper';
 
   export default {
     props: {
@@ -96,12 +100,35 @@
       }
     },
 
+    data() {
+      return {
+        swiperOptions: {
+          autoHeight: true,
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          },
+          fadeEffect: {
+            crossFade: true
+          }
+        }
+      }
+    },
+
     created () {
       console.log(this.data)
     },
 
     components: {
-      AthleteHeroSocialMedia
+      AthleteHeroSocialMedia,
+      Swiper
     }
   }
 </script>
