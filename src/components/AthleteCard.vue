@@ -51,6 +51,12 @@ export default {
       bottom: 19px;
       left: 50%;
       transform: translateX(-50%);
+
+      @include media(mobileXS) {
+        width: 100%;
+        border-radius: 35px;
+        font-size: 26px;
+      }
     }
 
     figure {
@@ -62,6 +68,10 @@ export default {
         border-radius: 5px;
         object-fit: cover;
         object-position: top;
+      }
+
+      @include media(mobileXS) {
+        height: 60vw;
       }
     }
 
@@ -86,6 +96,24 @@ export default {
         background-color: #fff;
         padding: 2px 5px 6px 12px;
       }
+
+      @include media(mobileXS) {
+        font-size: 9vw;
+      }
+    }
+
+    @include media(tablet) {
+      max-width: calc((100% / 3) - 40px);
+    }
+
+    @include media(mobile) {
+      max-width: calc((100% / 2) - 40px);
+    }
+
+    @include media(mobileXS) {
+      max-width: 100%;
+      margin: 0 0 25px;
+      padding-bottom: 120px;
     }
   }
 </style>

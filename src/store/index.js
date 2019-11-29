@@ -73,11 +73,12 @@ const getters = {
       return null
     }
 
-    const { background_logo: bgcLogo, hero_logo: heroLogo, hero_subheading: heroSubheading, home_hero_image: heroImage } = state.homePageData
+    const { background_logo: bgcLogo, hero_logo: heroLogo, hero_mobile_logo: heroMobileLogo, hero_subheading: heroSubheading, home_hero_image: heroImage } = state.homePageData
 
     return {
       bgcLogo,
       heroLogo,
+      heroMobileLogo,
       heroSubheading,
       heroImage
     }

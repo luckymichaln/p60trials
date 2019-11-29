@@ -122,10 +122,6 @@
       }
     },
 
-    created () {
-      console.log(this.data)
-    },
-
     components: {
       AthleteHeroSocialMedia,
       Swiper

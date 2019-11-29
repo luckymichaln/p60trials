@@ -1,0 +1,23 @@
+@mixin media($value) {
+  @media(max-width: $value) {
+    @content ;
+  }
+  @if $value == desktopXL {
+    @media (min-width: 1580px) { @content ; }
+  }
+  @if $value == desktop {
+    @media (min-width: 1180px) { @content ; }
+  }
+  @else if $value == tablet {
+    @media (max-width: 1020px) { @content ; }
+  }
+  @else if $value == gtMobile {
+    @media (min-width: 768px) { @content ; }
+  }
+  @else if $value == mobile {
+    @media (max-width: 767px) { @content ; }
+  }
+  @else if $value == mobileXS {
+    @media (max-width: 580px) { @content ; }
+  }
+}

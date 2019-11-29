@@ -2,6 +2,9 @@
 @import "vars/colors";
 @import "vars/fonts";
 
+// Mixins
+@import "mixins/breakpoints";
+
 // Globals
 @import "global/reset";
 @import "global/base";
@@ -15,6 +18,3 @@
 @import "components/button";
 @import "components/heading";
 @import "components/footer";
-
-
-

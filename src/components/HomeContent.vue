@@ -64,6 +64,21 @@ export default {
       font-size: 300px;
       font-weight: 900;
       color: #f2f2f2;
+
+      @include media(tablet) {
+        bottom: 30px;
+        font-size: 27vw;
+
+        @media (orientation: portrait) {
+          top: 41vh;
+          bottom: unset;
+        }
+      }
+
+      @include media(mobile) {
+        top: 41vh;
+        bottom: unset;
+      }
     }
 
     &-scroll-btn {

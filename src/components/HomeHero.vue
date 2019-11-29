@@ -3,7 +3,13 @@
     <div class="home-hero__hero-image">
       <div class="home-image-logo">
         <img
+          class="mobile-hidden"
           :src="heroData.heroLogo.url"
+          alt="Project Sixty name logo"
+        />
+        <img
+          class="desktop-hidden"
+          :src="heroData.heroMobileLogo.url"
           alt="Project Sixty name logo"
         />
       </div>
@@ -15,7 +21,7 @@
         />
       </div>
     </div>
-    <div class="home-hero__background-logo">
+    <div class="home-hero__background-logo mobile-hidden">
       <img
         :src="heroData.bgcLogo.url"
         alt="Project Sixty logo"
@@ -50,6 +56,24 @@
     &__hero-image {
       text-align: right;
       height: 83vh;
+
+      @include media(tablet) {
+        @media (orientation: portrait) {
+          height: 43vh;
+        }
+      }
+
+      @include media(mobile) {
+        @media (orientation: portrait) {
+          height: 83vh;
+        }
+      }
+
+      @include media(mobileXS) {
+        @media (orientation: portrait) {
+          height: 53vh;
+        }
+      }
     }
 
     &__background-logo {
@@ -72,6 +96,15 @@
         display: block;
         transform: rotate(-90deg);
       }
+
+      @include media(tablet) {
+        left: -96px;
+        font-size: 7vw;
+      }
+
+      @include media(mobile) {
+        display: none;
+      }
     }
 
     .home-image-logo {
@@ -82,6 +115,20 @@
       width: 355px;
       padding: 20px 40px 9px 10px;
       background-color: #fff;
+
+      @include media(mobile) {
+        top: 0;
+        left: unset;
+        right: 0;
+        width: 100%;
+        height: 90px;
+        padding: 20px;
+        text-align: center;
+
+        img {
+          height: 100%;
+        }
+      }
     }
 
     .hero-image-wrapper {
@@ -102,17 +149,27 @@
         object-fit: cover;
       }
 
-      &::before {
-        /* content: ''; */
-        position: absolute;
-        top: 0;
-        left: -275px;
-        z-index: 3;
-        height: 100%;
-        width: 55%;
-        background-color: #fff;
-        transform: skew(-25deg, 0deg);
+      @include media(tablet) {
+        left: 26vw;
+
+        img {
+          right: 26vw;
+        }
       }
+
+      @include media(mobile) {
+        left: 0;
+        transform: none;
+
+        img {
+          left: 0;
+          transform: none;
+        }
+      }
+    }
+
+    @include media(mobile) {
+      margin: -10px -10px 0 !important;
     }
   }
 </style>

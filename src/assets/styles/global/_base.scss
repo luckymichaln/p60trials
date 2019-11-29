@@ -17,6 +17,22 @@ html *, body * {
   em {
     font-style: italic;
   }
+
+  @include media(mobile) {
+    padding: 10px 10px 0;
+  }
+}
+
+.mobile-hidden {
+  @include media(mobile) {
+    display: none;
+  }
+}
+
+.desktop-hidden {
+  @include media(gtMobile) {
+    display: none;
+  }
 }
 
 .no-selection {
