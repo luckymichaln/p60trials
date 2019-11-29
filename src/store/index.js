@@ -103,11 +103,13 @@ const getters = {
 
     const media = slider
       .map(slide => {
-        return {
-          type: slide.slider_image.url ? 'photo' : slide.slider_link.url.split('www.')[1].split('.com')[0],
-          media: {
-            url: slide.slider_image.url || slide.slider_link.url,
-            alt: slide.slider_image.alt || null
+        if (slide.slider_image.url || slide.slider_link.url) {
+          return {
+            type: slide.slider_image.url ? 'photo' : slide.slider_link.url.split('www.')[1].split('.com')[0],
+            media: {
+              url: slide.slider_image.url || slide.slider_link.url,
+              alt: slide.slider_image.alt || null
+            }
           }
         }
       }).filter(el => el !== null)
@@ -142,7 +144,7 @@ const getters = {
         motto,
         quote
       },
-      media
+      media: media[0] ? media : null
     }
   }
 }

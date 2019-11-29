@@ -76,7 +76,7 @@
       </div>
     </section>
     <section
-      v-if="data.media.length"
+      v-if="data.media"
       class="athlete-profile__media"
     >
       <h3 class="media-heading heading-accent">Media</h3>
