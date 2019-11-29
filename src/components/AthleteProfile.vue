@@ -135,6 +135,13 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 70px;
+
+      @include media(mobile) {
+        position: relative;
+        flex-direction: column-reverse;
+        justify-content: unset;
+        margin-bottom: 0;
+      }
     }
 
     &__logos {
@@ -149,17 +156,35 @@
         max-width: 200px;
         opacity: .9;
       }
+
+      @include media(mobile) {
+        padding: 30px 0;
+        border: none;
+
+        img {
+          max-width: 150px;
+        }
+      }
     }
 
     &__bio {
       padding-top: 50px;
       margin-bottom: 80px;
+
+      @include media(mobile) {
+        padding-top: 20px;
+        margin-bottom: 120px;
+      }
     }
 
     &__media {
       margin-bottom: 200px;
 
       .media-heading {
+        margin-bottom: 50px;
+      }
+
+      @include media(mobile) {
         margin-bottom: 50px;
       }
     }
@@ -192,6 +217,11 @@
         right: -10px;
         bottom: -10px;
       }
+
+      @include media(mobile) {
+        width: 100%;
+        margin-top: 100px;
+      }
     }
 
     .hero-info {
@@ -223,6 +253,23 @@
           width: 10px;
           background-color: #fff;
         }
+
+        @include media(mobile) {
+          position: absolute;
+          top: calc(100% - 64px);
+          right: 10px;
+          padding: 4px 18px 6px 38px;
+
+          &::before {
+            top: 7px;
+            left: 14px;
+          }
+
+          &::after {
+            top: 11px;
+            left: 18px;
+          }
+        }
       }
 
       &-name {
@@ -243,7 +290,16 @@
           &:last-child {
             padding: 10px 50px 10px 30px;
             margin-left: 80px;
+
+            @include media(mobile) {
+              margin-left: 10vw;
+            }
           }
+        }
+
+        @include media(mobile) {
+          left: -10px;
+          font-size: 12vw;
         }
       }
 
@@ -265,6 +321,11 @@
             font-size: 85px;
             font-weight: 700;
             color: #d5d5d5;
+
+            @include media(mobile) {
+              top: 10px;
+              opacity: .4;
+            }
           }
 
           &-heading {
@@ -282,8 +343,23 @@
               position: relative;
               left: -10px;
             }
+
+            @include media(mobile) {
+              margin: 15px 0 0 20px;
+            }
           }
         }
+
+        @include media(mobile) {
+          top: -30px;
+          padding: 20px 10px 60px 10px;
+          margin-top: 0;
+        }
+      }
+
+      @include media(mobile) {
+        position: static;
+        max-width: 100%;
       }
     }
 
@@ -294,6 +370,10 @@
       strong {
         margin-right: 5px;
         font-size: 18px;
+      }
+
+      @include media(mobile) {
+        margin-bottom: 80px;
       }
     }
 
@@ -326,6 +406,10 @@
           content: '-';
           margin-right: 5px;
         }
+
+        @include media(mobile) {
+          margin-left: 10px;
+        }
       }
 
       .bio-quote {
@@ -357,6 +441,27 @@
           bottom: -30px;
           transform: rotate(-165deg);
         }
+
+        @include media(mobile) {
+          max-width: 100%;
+          padding: 0 30px;
+          margin: 0;
+
+          &::before {
+            top: -60px;
+            right: 5px;
+          }
+
+          &::after {
+            left: 5px;
+            bottom: -65px;
+          }
+        }
+      }
+
+      @include media(mobile) {
+        flex-direction: column;
+        margin-top: 30px;
       }
     }
   }

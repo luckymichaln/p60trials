@@ -12,7 +12,17 @@
     position: absolute;
     right: -64px;
     top: 0;
-    border-bottom: 67px solid transparent;
     border-left: 64px solid #000;
+    border-bottom: 67px solid transparent;
+  }
+
+  @include media(mobile) {
+    font-size: 30px;
+
+    &::after {
+      right: -49px;
+      border-left-width: 49px;
+      border-bottom-width: 49px;
+    }
   }
 }

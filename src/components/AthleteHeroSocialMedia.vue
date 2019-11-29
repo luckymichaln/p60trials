@@ -67,5 +67,14 @@ export default {
       color: #fff;
       background-color: #000;
     }
+
+    @include media(mobile) {
+      left: 10px;
+      bottom: 10px;
+
+      li:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
   }
 </style>
