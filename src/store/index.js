@@ -142,7 +142,7 @@ const getters = {
         coach,
         achievements,
         motto,
-        quote
+        quote: quote[0] ? quote : null
       },
       media: media[0] ? media : null
     }

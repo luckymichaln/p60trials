@@ -70,7 +70,10 @@
             </li>
           </ul>
         </div>
-        <div class="bio-quote">
+        <div
+          v-if="data.bio.quote"
+          class="bio-quote"
+        >
           <prismic-rich-text :field="data.bio.quote"/>
         </div>
       </div>
